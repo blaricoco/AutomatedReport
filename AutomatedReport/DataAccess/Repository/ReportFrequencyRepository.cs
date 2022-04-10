@@ -1,5 +1,5 @@
 ﻿using AutomatedReport.DataAccess.Contract;
-using AutomatedReport.DataAccess.Model;
+using AutomatedReport.DataAccess.Models;
 using Dapper;
 using System;
 using System.Collections.Generic;
@@ -67,7 +67,16 @@ namespace AutomatedReport.DataAccess.Repository
 
         public async Task<int> AddAsync(ReportFrequency_ entity)
         {
-            throw new NotImplementedException();
+            using (var connection = _dapperContext.GetDbConnection())
+            {
+                connection.Open();
+
+                string sql = @"INSERT INTO tblReportFrequency (ReportFrequency) VALUES (@ReportFrequency)";
+
+                var updated = await connection.ExecuteAsync(sql, entity);
+
+                return updated;
+            }
         }
 
         public Task<int> DeleteAsync(int id)

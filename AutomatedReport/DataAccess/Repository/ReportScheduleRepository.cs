@@ -1,5 +1,5 @@
 ﻿using AutomatedReport.DataAccess.Contract;
-using AutomatedReport.DataAccess.Model;
+using AutomatedReport.DataAccess.Models;
 using Dapper;
 using System;
 using System.Collections.Generic;
@@ -66,9 +66,19 @@ namespace AutomatedReport.DataAccess.Repository
         }
 
 
-        public Task<int> AddAsync(ReportSchedule entity)
+        public async Task<int> AddAsync(ReportSchedule entity)
         {
-            throw new NotImplementedException();
+            using (var connection = _dapperContext.GetDbConnection())
+            {
+                connection.Open();
+
+                string sql = @"INSERT INTO tblReportSchedule  (ReportScheduledTime, ReportScheduledDay, ReportScheduledDate) 
+                               VALUES (@ReportScheduledTime,@ReportScheduledDay,@ReportScheduledDate)";
+
+                var updated = await connection.ExecuteAsync(sql, entity);
+
+                return updated;
+            }
         }
 
 
