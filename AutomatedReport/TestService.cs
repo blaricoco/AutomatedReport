@@ -24,7 +24,7 @@ namespace AutomatedReport
             _logger.LogInformation("Scheduler triggered!");
             // Read database 
             _scheduler.Schedule<ScheduledTask>().EveryFiveSeconds();
- 
+
 
 
             return Task.FromResult(true);

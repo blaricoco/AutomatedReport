@@ -1,7 +1,7 @@
 using AutomatedReport;
 using AutomatedReport.DataAccess;
 using AutomatedReport.DataAccess.Contract;
-using AutomatedReport.DataAccess.Model;
+using AutomatedReport.DataAccess.Models;
 using AutomatedReport.DataAccess.Repository;
 using Coravel;
 using Serilog;

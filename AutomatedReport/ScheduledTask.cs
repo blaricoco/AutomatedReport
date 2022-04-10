@@ -1,5 +1,5 @@
 ﻿using AutomatedReport.DataAccess.Contract;
-using AutomatedReport.DataAccess.Model;
+using AutomatedReport.DataAccess.Models;
 using Coravel.Invocable;
 using System;
 using System.Collections.Generic;
@@ -24,7 +24,7 @@ namespace AutomatedReport
             _logger.LogInformation("Worker running at: {time}", DateTimeOffset.Now);
             //var test = _reportScheduledFrequencyRepository.GetAllAsync();
 
-            var test = _reportRepository.UpdateAsync(new ReportScheduledFrequency() { ReportScheduledFrequencyID = 1, ReportFrequencyID = 1, ReportScheduleID = 2});
+            var test = _reportRepository.AddAsync(new ReportScheduledFrequency { ReportFrequencyID = 2, ReportScheduleID = 2});
             var test3 = test.Result;
             var test2 = "";
             return Task.FromResult(true);
