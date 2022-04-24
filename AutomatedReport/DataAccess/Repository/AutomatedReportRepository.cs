@@ -31,7 +31,8 @@ namespace AutomatedReport.DataAccess.Repository
 	                            LEFT JOIN tblReportFrequency RF
 		                            ON RF.ReportFrequencyID = RSF.ReportFrequencyID
 	                            LEFT JOIN tblReportSchedule RS
-		                            ON RS.ReportScheduleID = RSF.ReportScheduleID";
+		                            ON RS.ReportScheduleID = RSF.ReportScheduleID
+                                WHERE R.Active = 1";
                 var automatedReports = await connection.QueryAsync<Models.AutomatedReport>(sql);
 
                 return automatedReports;

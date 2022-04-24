@@ -23,7 +23,7 @@ namespace AutomatedReport.DataAccess.Repository
             {
                 connection.Open();
 
-                string sql = "SELECT * FROM tblReports";
+                string sql = "SELECT * FROM tblReports WHERE Active = 1";
                 var reportData = await connection.QueryAsync(sql);
 
                 return reportData;

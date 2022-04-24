@@ -22,7 +22,6 @@ namespace AutomatedReport.ReportEngine
             _reportGenerator = reportGenerator;
             _logger = logger;
             _scheduler = scheduler;
-
         }
 
         public Task Invoke()

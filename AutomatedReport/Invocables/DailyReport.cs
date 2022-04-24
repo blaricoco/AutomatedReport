@@ -31,7 +31,7 @@ namespace AutomatedReport.Invocables
             var data = _reportSPRepository.GetDataSPAsync(_report.ReportStoredProcedure, _report.ReportParameters).Result;
 
             // Save report into directory 
-            ExcelClient.ExportToExcel(data, $"{_reportOutputDir}\\{_report.ReportName}_{DateTime.Now.ToString("yyyy_MMddm")}.csv"  );
+            ExcelClient.ExportToExcel(data, $"{_reportOutputDir}\\{_report.ReportName}_{DateTime.Now.ToString("yyyy_MMddm")}.csv");
             
             // TODO: send report via email
 
