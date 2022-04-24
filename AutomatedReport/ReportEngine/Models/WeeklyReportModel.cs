@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AutomatedReport.ReportEngine.Models
 {
-    public class WeeklyReportModel
+    public class WeeklyReportModel: ReportModelBase
     {
         public List<string>? ReportScheduledTime { get; set; }
         public List<string>? ReportScheduledDay { get; set; } 

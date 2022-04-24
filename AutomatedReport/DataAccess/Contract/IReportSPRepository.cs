@@ -4,13 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AutomatedReport.ReportEngine
+namespace AutomatedReport.DataAccess.Contract
 {
-    public class ScheduleReports
+    public interface IReportSPRepository
     {
-        public ScheduleReports()
-        {
-
-        }
+        // implement Interface
     }
 }

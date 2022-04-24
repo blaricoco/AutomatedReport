@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AutomatedReport.DataAccess.Models
 {
-    public class Report
+    public class AutomatedReport
     {
         public int ReportID { get; set; }
         public string? ReportName { get; set; }
@@ -14,6 +14,11 @@ namespace AutomatedReport.DataAccess.Models
         public string? ReportParameters { get; set; }
         public int ReportScheduledFrequencyID { get; set; }
         public bool Active { get; set; }
-
+        public int ReportFrequencyID { get; set; }
+        public string? ReportFrequency { get; set; } 
+        public int ReportScheduleID { get; set; }
+        public string? ReportScheduledTime { get; set; }
+        public string? ReportScheduledDay { get; set; }
+        public string? ReportScheduledDate { get; set; }
     }
 }

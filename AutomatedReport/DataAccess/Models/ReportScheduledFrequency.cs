@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AutomatedReport.DataAccess.Models
 {
-    internal class ReportScheduledFrequency
+    public class ReportScheduledFrequency
     {
         public int ReportScheduledFrequencyID { get; set; }
         public int ReportFrequencyID { get; set; }
